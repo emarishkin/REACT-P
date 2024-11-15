@@ -1,13 +1,15 @@
+import { useState } from 'react'
 import logo from '/logo-name.svg'
 
 
 export function Header(){
-    const now = new Date()
-    const name = 'result'
+  let [now,setNow] = useState(new Date())
+    
+   setInterval(() => setNow(new Date()),1000)
 
     return(
   <header>
-    <img src={logo} alt={name} />
+    <img src={logo} alt={'name'} />
           {/* <h3>Result Universuty</h3> */}
   
           <span>Время сейчас: {now.toLocaleTimeString()}</span>
